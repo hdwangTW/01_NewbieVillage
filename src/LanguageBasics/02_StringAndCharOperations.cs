@@ -16,7 +16,7 @@ namespace LanguageBasics
             const string name = "Hall";
 
             // change "default(string)" to correct value.
-            const string expectedResult = default(string);
+            const string expectedResult = "Mr. Hall";
 
             Assert.Equal(expectedResult, (title + name));
         }
@@ -28,6 +28,8 @@ namespace LanguageBasics
             const string name = "Hall";
 
             var builder = new StringBuilder();
+            builder.Append(title);
+            builder.Append(name);
             // add at most 2 lines of code here concating variable "title" and "name".
 
             Assert.Equal("Mr. Hall", builder.ToString());
@@ -40,8 +42,8 @@ namespace LanguageBasics
             string replacement = originalString.Replace("Str", "W");
 
             // change "" in the following 2 lines to correct values.
-            const string expectedOrignalString = "";
-            const string expectedReplacement = "";
+            const string expectedOrignalString = "Original String";
+            const string expectedReplacement = "Original Wing";
             
             Assert.Equal(expectedOrignalString, originalString);
             Assert.Equal(expectedReplacement, replacement);
@@ -54,7 +56,7 @@ namespace LanguageBasics
             builder.Replace("Str", "W");
 
             // change "" in the following line to correct value.
-            const string expectedResult = "";
+            const string expectedResult = "Original Wing";
 
             Assert.Equal(expectedResult, builder.ToString());
         }
@@ -66,7 +68,7 @@ namespace LanguageBasics
             char characterAtIndex2 = originalString[2];
 
             // change "default(char)" to correct value.
-            const char expectedResult = default (char);
+            const char expectedResult = 'i';
 
             Assert.Equal(expectedResult, characterAtIndex2);
         }
@@ -78,7 +80,7 @@ namespace LanguageBasics
             string equivalent = "Original" + " String";
 
             // change "default(bool)" to correct value.
-            const bool expectedResult = default(bool);
+            const bool expectedResult = true;
 
             Assert.Equal(expectedResult, (str == equivalent));
         }
@@ -90,8 +92,8 @@ namespace LanguageBasics
             const string inDifferentCase = "oRiginal String";
 
             // change the variable values in the following 2 lines.
-            var caseSensitiveComparison = StringComparison.InvariantCultureIgnoreCase;
-            var caseInsensitiveComparison = StringComparison.InvariantCulture;
+            var caseSensitiveComparison = StringComparison.Ordinal;
+            var caseInsensitiveComparison = StringComparison.OrdinalIgnoreCase;
 
             Assert.False(originalString.Equals(inDifferentCase, caseSensitiveComparison));
             Assert.True(originalString.Equals(inDifferentCase, caseInsensitiveComparison));
