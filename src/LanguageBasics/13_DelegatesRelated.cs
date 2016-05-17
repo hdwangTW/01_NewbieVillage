@@ -128,8 +128,8 @@ namespace LanguageBasics
 
             ((a + b + c) - (a + c))();
 
-            // change variable value to fix test.
-            const string expectedOutput = "B,";
+            // change variable value to fix test.[mark]
+            const string expectedOutput = "A,B,C";
 
             Assert.Equal(expectedOutput, demoObject.ToString());
         }
@@ -146,7 +146,7 @@ namespace LanguageBasics
             int returnedResult = (returnsOne + returnsThree + returnsTwo)();
 
             // change variable value to fix test.
-            const int expectedResult = 6;
+            const int expectedResult = 2;
 
             Assert.Equal(expectedResult, returnedResult);
         }
@@ -161,7 +161,7 @@ namespace LanguageBasics
             object returnedValue = delegateReturnsObject();
 
             // change variable value to fix test.
-            object expectedValue = null;
+            object expectedValue = "Hello";
 
             Assert.Equal(expectedValue, returnedValue);
         }
@@ -177,7 +177,7 @@ namespace LanguageBasics
             string returnedValue = delegateAcceptsString("Good");
 
             // change variable value to fix test.
-            const string expectedValue = "";
+            const string expectedValue = "Good";
 
             Assert.Equal(expectedValue, returnedValue);
         }

@@ -22,7 +22,7 @@ namespace LanguageBasics
             demoObject.TriggerEvent();
 
             // change the variable value to fix the test.
-            const bool expectedIsEventCalled = false;
+            const bool expectedIsEventCalled = true;
 
             Assert.Equal(expectedIsEventCalled, eventIsCalled);
         }
@@ -44,7 +44,7 @@ namespace LanguageBasics
             demoObject.TriggerEvent();
 
             // change the variable value to fix the test.
-            const bool expectedIsEventCalled = true;
+            const bool expectedIsEventCalled = false;
 
             Assert.Equal(expectedIsEventCalled, eventIsCalled);
         }
@@ -64,8 +64,8 @@ namespace LanguageBasics
 
             demoObject.Greet("World");
 
-            // change the variable value to fix the test.
-            const string expectedContent = "";
+            // change the variable value to fix the test.[mark]
+            const string expectedContent = "Hello World";
 
             Assert.Equal(expectedContent, greetingContent);
         }
@@ -76,7 +76,7 @@ namespace LanguageBasics
             var demoObject = new CustomizeEventAccessorDemoClass();
 
             // change the variable value to fix the test.
-            var expectedExceptionType = typeof(Exception);
+            var expectedExceptionType = typeof(ArgumentNullException);
 
             Assert.Throws(expectedExceptionType, () => demoObject.Event += null);
         }
