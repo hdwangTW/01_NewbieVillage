@@ -27,7 +27,7 @@ namespace LanguageBasics
             }
 
             // change variable value to fix test.
-            const string expectedTracingMessage = "";
+            const string expectedTracingMessage = "constructor called.\r\ndispose called.\r\n";
 
             Assert.Equal(expectedTracingMessage, tracer.ToString());
         }
@@ -43,7 +43,7 @@ namespace LanguageBasics
             }
 
             // change the variable value to fix the test.
-            const string expectedTracingMessage = "";
+            const string expectedTracingMessage = "constructor called.\r\ndispose called.\r\n";
 
             Assert.Equal(expectedTracingMessage, tracer.ToString());
         }
