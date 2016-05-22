@@ -20,7 +20,7 @@ namespace LanguageBasics
 
             // please update variable value to fix the test.
             IEnumerable<string> expectedResult =
-                new[] {"a", "quick", "brown", "fox", "jumps", "over", "a", "lazy", "dog"};
+                new[] { "quick", "brown", "jumps"};
 
             Assert.Equal(expectedResult, filteredResult);
         }
@@ -39,7 +39,7 @@ namespace LanguageBasics
 
             // please update variable value to fix the test.
             IEnumerable<string> expectedResult =
-                new[] {"Edogawa Conan", "Ogiso Setsuna"};
+                new[] { "Edogawa Conan", "Ogiso Setsuna", "Kirigaya Katsuto" };
 
             Assert.Equal(expectedResult, projection);
         }
@@ -52,7 +52,7 @@ namespace LanguageBasics
             IEnumerable<int> filteredElements = sequence.Take(3);
 
             // please update variable value to fix the test.
-            IEnumerable<int> expectedResult = new[] {1, 2, 3, 4, 5};
+            IEnumerable<int> expectedResult = new[] {1, 2, 3};
 
             Assert.Equal(expectedResult, filteredElements);
         }
@@ -65,7 +65,7 @@ namespace LanguageBasics
             IEnumerable<int> filteredElements = sequence.Skip(3);
 
             // please update variable value to fix the test.
-            IEnumerable<int> expectedResult = new[] {1, 2, 3, 4, 5};
+            IEnumerable<int> expectedResult = new[] { 4, 5};
 
             Assert.Equal(expectedResult, filteredElements);
         }
@@ -79,8 +79,8 @@ namespace LanguageBasics
             int firstEvenNumber = sequence.First(item => item % 2 == 0);
 
             // please update variable values for the following 2 lines to fix the test.
-            const int expectedFirstElement = 0;
-            const int expectedFirstEvenNumber = 0;
+            const int expectedFirstElement = 1;
+            const int expectedFirstEvenNumber = 2;
 
             Assert.Equal(expectedFirstElement, firstElement);
             Assert.Equal(expectedFirstEvenNumber, firstEvenNumber);
@@ -95,8 +95,8 @@ namespace LanguageBasics
             int lastEvenNumber = sequence.Last(item => item % 2 == 0);
 
             // please update variable values for the following 2 lines to fix the test.
-            const int expectedLastElement = 0;
-            const int expectedLastEvenNumber = 0;
+            const int expectedLastElement = 5;
+            const int expectedLastEvenNumber = 4;
 
             Assert.Equal(expectedLastElement, lastElement);
             Assert.Equal(expectedLastEvenNumber, lastEvenNumber);
@@ -110,7 +110,7 @@ namespace LanguageBasics
             int thirdElement = sequence.ElementAt(2);
 
             // please update variable value to fix the test.
-            const int expectedThirdElement = 0;
+            const int expectedThirdElement = 3;
 
             Assert.Equal(expectedThirdElement, thirdElement);
         }
@@ -124,8 +124,8 @@ namespace LanguageBasics
             int numberOfEvenNumbers = sequence.Count(item => item % 2 == 0);
 
             // please update variable value to fix the test.
-            const int expectedTotalNumber = 0;
-            const int expectedNumberOfEvenNumbers = 0;
+            const int expectedTotalNumber = 5;
+            const int expectedNumberOfEvenNumbers = 2;
 
             Assert.Equal(expectedTotalNumber, totalNumber);
             Assert.Equal(expectedNumberOfEvenNumbers, numberOfEvenNumbers);
@@ -139,7 +139,7 @@ namespace LanguageBasics
             int minNumber = sequence.Min();
 
             // please update variable value to fix the test.
-            const int expectedMinNumber = 0;
+            const int expectedMinNumber = 1;
 
             Assert.Equal(expectedMinNumber, minNumber);
         }
@@ -152,7 +152,7 @@ namespace LanguageBasics
             int maxNumber = sequence.Max();
 
             // please update variable value to fix the test.
-            const int expectedMaxNumber = 0;
+            const int expectedMaxNumber = 5;
 
             Assert.Equal(expectedMaxNumber, maxNumber);
         }
@@ -166,8 +166,8 @@ namespace LanguageBasics
             bool containsTen = sequence.Contains(10);
 
             // please update variable values of the following 2 lines to fix the test.
-            const bool expectedContainsTwo = false;
-            const bool expectedContainsTen = true;
+            const bool expectedContainsTwo = true;
+            const bool expectedContainsTen = false;
 
             Assert.Equal(expectedContainsTwo, containsTwo);
             Assert.Equal(expectedContainsTen, containsTen);
@@ -182,8 +182,8 @@ namespace LanguageBasics
             bool modThreeNotEmpty = sequence.Any(item => item % 3 == 0);
 
             // please update variable values of the following 2 lines to fix the test.
-            const bool expectedSequenceNotEmpty = false;
-            const bool expectedModThreeNotEmpty = false;
+            const bool expectedSequenceNotEmpty = true;
+            const bool expectedModThreeNotEmpty = true;
 
             Assert.Equal(expectedSequenceNotEmpty, sequenceNotEmpty);
             Assert.Equal(expectedModThreeNotEmpty, modThreeNotEmpty);
@@ -197,7 +197,7 @@ namespace LanguageBasics
             bool allEvenNumbers = sequence.All(item => item % 2 == 0);
 
             // please update variable value to fix the test.
-            const bool expectedAllEvenNumbers = false;
+            const bool expectedAllEvenNumbers = true;
 
             Assert.Equal(expectedAllEvenNumbers, allEvenNumbers);
         }
@@ -211,7 +211,7 @@ namespace LanguageBasics
             IEnumerable<int> concat = left.Concat(right);
 
             // please update variable value to fix the test.
-            IEnumerable<int> expectedConcatResult = new[] {1, 2, 3};
+            IEnumerable<int> expectedConcatResult = new[] { 1, 2, 3, 4, 5 };
 
             Assert.Equal(expectedConcatResult, concat);
         }
@@ -225,7 +225,7 @@ namespace LanguageBasics
             IEnumerable<int> unionResult = left.Union(right);
 
             // please update variable value to fix the test.
-            IEnumerable<int> expectedUnionResult = new[] { 1, 2, 3 };
+            IEnumerable<int> expectedUnionResult = new[] { 1, 2, 3, 4, 5 };
 
             Assert.Equal(expectedUnionResult, unionResult);
         }
@@ -239,13 +239,13 @@ namespace LanguageBasics
             IEnumerable<int> intersection = firstSequence.Intersect(secondSequence);
 
             // please update variable value to fix the test.
-            IEnumerable<int> expectedIntersection = new[] { 1, 2, 3 };
+            IEnumerable<int> expectedIntersection = new[] { 3 };
 
             Assert.Equal(expectedIntersection, intersection);
         }
 
         [Fact]
-        public void should_get_sequence_excpetions()
+        public void should_get_sequence_exceptions()
         {
             var firstSequence = new[] { 1, 2, 3 };
             var secondSequence = new[] { 4, 3, 5 };
@@ -253,7 +253,7 @@ namespace LanguageBasics
             IEnumerable<int> except = firstSequence.Except(secondSequence);
 
             // please update variable value to fix the test.
-            IEnumerable<int> expectedIntersection = new[] { 1, 2, 3 };
+            IEnumerable<int> expectedIntersection = new[] { 1, 2 };
 
             Assert.Equal(expectedIntersection, except);
         }
@@ -266,7 +266,7 @@ namespace LanguageBasics
             IOrderedEnumerable<int> orderedResult = sequence.OrderBy(item => item);
 
             // please update variable value to fix the test.
-            IEnumerable<int> expectedOrderedResult = new[] {4, 2, 1, 3, 5};
+            IEnumerable<int> expectedOrderedResult = new[] {1, 2, 3, 4, 5};
 
             Assert.Equal(expectedOrderedResult, orderedResult);
         }
@@ -281,8 +281,8 @@ namespace LanguageBasics
 
             sequence.Add(2);
 
-            // please update variable value to fix the test.
-            IEnumerable<string> expectedProjection = new[] { "1" };
+            // please update variable value to fix the test.[mark]
+            IEnumerable<string> expectedProjection = new[] { "1", "2" };
 
             Assert.Equal(expectedProjection, projection);
         }

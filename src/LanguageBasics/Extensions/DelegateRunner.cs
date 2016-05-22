@@ -4,7 +4,8 @@ namespace LanguageBasics.Extensions
 {
     internal static class DelegateRunner
     {
-        public static Exception RunAndGetUnhandledException(this Action action)
+        public static Exception 
+            RunAndGetUnhandledException(this Action action)
         {
             try
             {
